@@ -7,12 +7,13 @@
 double benchmarkGeneral(void (*test)(void)) {
 	//Converting factor to measure in milliseconds
 	const double SECS_TO_MILLI = 1000.0;
+	double start, end;
 	//Will measure time difference in milliseconds
-	double start = clock() * SECS_TO_MILLI / CLOCKS_PER_SEC;
+	start = clock() * SECS_TO_MILLI / CLOCKS_PER_SEC;
 
 	(*test)();
 
-	double end = clock() * SECS_TO_MILLI / CLOCKS_PER_SEC;
+	end = clock() * SECS_TO_MILLI / CLOCKS_PER_SEC;
 
 	//Some output padding
 	printf("\n\n");
@@ -29,7 +30,7 @@ double benchmarkGeneral(void (*test)(void)) {
 
 void benchmarkGeneralMulti(void (*test)(void), int runs) {
 	//Array holding the time entries for each time elapsed
-	double *times = malloc(runs * sizeof(double));
+	double times[runs];
 	//Total time for averaging
 	double totalTime = 0;
 
