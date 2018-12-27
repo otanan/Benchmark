@@ -1,7 +1,11 @@
+/******************************Include******************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+/******************************End Include******************************/
 
+
+/******************************Definitions******************************/
 //Function that takes in another function from a library
 //and uses it to perform a shrewd benchmark
 double benchmark_general(void (*test)(void)) {
@@ -48,3 +52,4 @@ void benchmark_general_multi(void (*test)(void), int runs) {
 
 	printf("\n\n");
 }
+/******************************End Definitions******************************/
