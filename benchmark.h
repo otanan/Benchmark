@@ -1,6 +1,37 @@
-//General test program
-//Returns the time elapsed for the benchmark
-float benchmark_general(void (*test)(void));
+/*
+*Filename: 		benchmark.h
+*Author: 		Jonathan Delgado
+*Description: 	Public functions for using the benchmark program
+*/
+
+
+
+
+/*
+*Function: benchmark_general
+*-----------------------------
+*General test function. Takes a time difference from before a function
+*passed in is run, versus when it completed runnings
+*
+*void (*test)(): 	Function pointer, pointing to the function to be benchmarked
+*arg2: 	arg2 is the second argument
+*
+*returns: 		returns the time elapsed for the benchmark
+*/
+double benchmark_general(void (*test)(void));
 //Runs the general test program several times, then prints the average time run
 //Should be a more accurate representation of time
-void benchmark_general_multi(void (*test)(void), int runs);
+
+
+/*
+*Function: benchmark_general_multi
+*-----------------------------
+*Runs the general test function multiple times to improve the
+*average and gather more informed statistics
+*
+*void (*test)(): 	Function pointer, pointing to the function to be benchmarked
+*int runs: 			The amount of times for the benchmark to be run
+*
+*returns: 			Reteurns the average time to run the function
+*/
+double benchmark_general_multi(void (*test)(void), int runs);
