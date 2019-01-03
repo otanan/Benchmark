@@ -1,9 +1,13 @@
+/*
+*Filename: 		benchmark.c
+*Author: 		Jonathan Delgado
+*Description: 	Implementation of benchmark program
+*/
+
 /******************************Include******************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/******************************End Include******************************/
-
 
 /******************************Definitions******************************/
 //Function that takes in another function from a library
@@ -32,7 +36,7 @@ double benchmark_general(void (*test)(void)) {
 	return time_elapsed_ms;
 }
 
-void benchmark_general_multi(void (*test)(void), int runs) {
+double benchmark_general_multi(void (*test)(void), int runs) {
 	//Array holding the time entries for each time elapsed
 	double times[runs];
 	//Total time for averaging
@@ -43,13 +47,17 @@ void benchmark_general_multi(void (*test)(void), int runs) {
 		total_time_ms += times[i];
 	}
 
+	double average = total_time_ms / runs;
+
 	//Some output padding
 	printf("\n\n");
 
 	printf("Total amount of runs: %d\n", runs);
 	printf("Total time elapsed: %f ms\n", total_time_ms);
-	printf("Average time elapsed: %.10f ms\n", total_time_ms / runs);
+	printf("Average time elapsed: %.10f ms\n", average);
 
 	printf("\n\n");
+
+	return average;
 }
 /******************************End Definitions******************************/
