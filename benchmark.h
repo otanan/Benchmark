@@ -5,8 +5,6 @@
 */
 
 
-
-
 /*
 *Function: benchmark_general
 *-----------------------------
@@ -19,15 +17,13 @@
 *returns: 		returns the time elapsed for the benchmark
 */
 double benchmark_general(void (*test)(void));
-//Runs the general test program several times, then prints the average time run
-//Should be a more accurate representation of time
-
 
 /*
 *Function: benchmark_general_multi
 *-----------------------------
 *Runs the general test function multiple times to improve the
-*average and gather more informed statistics
+*average and gather more informed statistics. Prints information about
+*the running and average to stdout
 *
 *void (*test)(): 	Function pointer, pointing to the function to be benchmarked
 *int runs: 			The amount of times for the benchmark to be run
