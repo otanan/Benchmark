@@ -11,10 +11,9 @@
 *General test function. Takes a time difference from before a function
 *passed in is run, versus when it completed runnings
 *
-*void (*test)(): 	Function pointer, pointing to the function to be benchmarked
-*arg2: 	arg2 is the second argument
+*test: 		function pointer, pointing to the function to be benchmarked
 *
-*returns: 		returns the time elapsed for the benchmark
+*returns: 	returns the time elapsed for the benchmark
 */
 double benchmark_general(void (*test)(void));
 
@@ -25,9 +24,9 @@ double benchmark_general(void (*test)(void));
 *average and gather more informed statistics. Prints information about
 *the running and average to stdout
 *
-*void (*test)(): 	Function pointer, pointing to the function to be benchmarked
-*int runs: 			The amount of times for the benchmark to be run
+*test: 		function pointer, pointing to the function to be benchmarked
+*runs: 		the amount of times for the benchmark to be run
 *
-*returns: 			Reteurns the average time to run the function
+*returns: 	Reteurns the average time to run the function
 */
 double benchmark_general_multi(void (*test)(void), int runs);
